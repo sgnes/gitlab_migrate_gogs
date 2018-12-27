@@ -75,7 +75,9 @@ for proj in gl.projects.list(all=True):
 local_git_dir = "D:\Temp\g3"
 
 # migrate repository
-# step1 clone all repository to local
+# better to set "git config --global credential.helper wincred"
+# write all the cmd into a batch file, then you can run the batch file to get clone all the repository from gitlab
+# then push to gogs
 with open("1.bat") as bat_file:
     for proj in gl.projects.list(all=True):
         org = proj.namespace["name"]
